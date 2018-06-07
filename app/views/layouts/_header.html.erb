@@ -24,7 +24,9 @@
         <div class="header_social">
           <ul>
             <% if user_signed_in? %>
-            <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
+            <%= link_to t("view_reveration"), reservations_path, class: "option-signedin" %>
+            <span>  |  </span>
+            <%= link_to t(".logout"), destroy_user_session_path, method: :delete, class: "option-signedin" %>
             <% else %>
             <li class="header_social_text">
               <%= link_to t(".signup"), new_user_registration_path %>

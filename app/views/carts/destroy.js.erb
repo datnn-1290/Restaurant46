@@ -1,4 +1,4 @@
 $('.cart-item').bind('ajax:success', function(){
   $(this).parents('tr:first') .remove();
 });
-$(".total").html('<%= total_cart %> VND');
+$(".total").html('<%= t ".total" %>:<%= currency_format total_cart %>');

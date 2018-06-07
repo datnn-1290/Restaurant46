@@ -1,0 +1,57 @@
+<div class="col-md-6" id="checkout">
+    <div class="box">
+      <h1><%= t "table_reserve" %></h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="phone"><%= t "time_start" %></label>
+            <label for="phone"><%= order.time_start %></label>
+          </div>
+        </div>
+         <div class="col-sm-4">
+          <div class="form-group">
+            <p for="address"><%= t "time_end" %></p>
+            <label for="address"><%= order.time_end %></label>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <p for="address"><%= t "price" %></p>
+            <label for="address"><%= order.price_table %></label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+<div class="col-md-6" id="checkout">
+    <h1><%= t "dish_order" %></h1>
+    <div class="content">
+      <div class="table-responsive">
+        <table class="table" style="text-align: center;">
+          <thead>
+            <tr>
+              <th><%= t ".name" %></th>
+              <th><%= t ".quantity" %></th>
+              <th><%= t ".unit_price" %></th>
+            </tr>
+          </thead>
+          <tbody class="table-cart">
+            <% order.booking_details.each do |detail| %>
+            <tr>
+            <td><%= detail.dish.name %></td>
+              <td><%= detail.quantity %></td>
+              <td><%= detail.price %></td>
+            </tr>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="5"><%= t ".total" %></th>
+              <th><%= currency_format total_cart %></th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+</div>

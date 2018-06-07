@@ -3,6 +3,8 @@ en:
   table: "Table"
   check_out: "Check out"
   delete: "Delete"
+  view_reveration: "Your reservation"
+  require_login: "Please login to our website!"
   confirm_delete: "Are you sure to delete?"
   reserve_table: "Reserve table"
   reserved_table: "You reserved table successful! You can order dish for table now!"
@@ -29,7 +31,7 @@ en:
       today_menu: "Today's menu"
   carts:
     index:
-      title: "Your cart"
+      title: "Your order"
   layouts:
     header:
       total: "Total"
@@ -43,6 +45,7 @@ en:
       menu: "Menu"
       menu_grid: "Menu Grid"
       menu_list: "Menu List"
+      view_order: View order
       gallery: "Gallery"
       table: "Table"
       contact: "Contact US"
