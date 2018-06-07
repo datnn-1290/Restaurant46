@@ -1,0 +1,18 @@
+<section class="most_popular_item_area menu_list_page">
+  <div class="container">
+    <div class="s_white_title">
+      <h3 class="red-title"><%= t ".search_result" %></h3>
+      <h2 class="red-title"><%= t ".today_menu" %></h2>
+    </div>
+
+    <div class="p_recype_item_main">
+      <div class="row p_recype_item_active">
+        <% if @dishes.present? %>
+          <% @dishes.each do |dish| %>
+            <%= render "dish_search", dish: dish %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

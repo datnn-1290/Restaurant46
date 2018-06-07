@@ -287,7 +287,7 @@
 
 .search-bar{
   display: none;
-  right: 60px;
+  right: 15%;
   position: absolute;
 }
 
@@ -297,4 +297,8 @@
 
 .event_btn{
   margin-left: 30%;
+}
+
+.easy-autocomplete{
+  width: 100%;
 }

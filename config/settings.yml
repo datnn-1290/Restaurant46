@@ -15,3 +15,7 @@ paginate:
   table_perpage: 9
 dish:
   image_size: [750, 380]
+paginate:
+  table_perpage: 9
+limit:
+  autocomplete: 2

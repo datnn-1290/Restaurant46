@@ -1,18 +1,16 @@
 <div class="col-md-4 col-sm-6 break snacks">
   <div class="feature_item">
     <div class="feature_item_inner">
-    <% if table.image.present? %>
-      <%= image_tag table.image, class: "img-responsive" %>
-    <% end %>
+      <%= show_image dish %>
       <div class="icon_hover">
         <i class="fa fa-search"></i>
         <i class="fa fa-shopping-cart"></i>
       </div>
     </div>
     <div class="title_text">
-      <div class="feature_left"><a href="#"><span><%= t("table") +" "+ table.id.to_s %></span></a></div>
+    <div class="feature_left"><a href="#"><span><%= dish.name %></span></a></div>
       <div class="restaurant_feature_dots"></div>
-      <div class="feature_right"><%= currency_format table.price %></div>
+      <div class="feature_right"><%= currency_format dish.price %></div>
     </div>
   </div>
 </div>

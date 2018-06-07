@@ -3,3 +3,9 @@ $( document ).ready(function() {
     today: true,
   });
 });
+
+$(document).ready(function(){
+  $(".search-btn").click(function(){
+    $(".search-bar").toggle(500);
+  });
+});

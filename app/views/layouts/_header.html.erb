@@ -82,11 +82,42 @@
           <li><a href="javascript:void();"><%= t ".table" %></a></li>
           <li><a href="javascript:void();"><%= t ".contact" %></a></li>
           <!-- <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li> -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+              <i class="fa fa-shopping-bag"></i>
+              <span class="badge">3</span>
+            </a>
+            <ul class="dropdown-menu cart-list">
+              <li>
+                <a href="#" class="photo"><img src="IMAGE_ADDRESS" class="cart-thumb" alt="" /></a>
+                <h6><a href="#">Delica omtantur </a></h6>
+                <p>2x - <span class="price">$99.99</span></p>
+              </li>
+              <li>
+                <a href="#" class="photo"><img src="IMAGE_ADDRESS" class="cart-thumb" alt="" /></a>
+                <h6><a href="#">Delica omtantur </a></h6>
+                <p>2x - <span class="price">$99.99</span></p>
+              </li>
+              -- More List --
+              <li class="total">
+                <span class="pull-right"><strong>Total</strong>: $0.00</span>
+                <a href="#" class="btn btn-default btn-cart">Cart</a>
+              </li>
+            </ul>
+          </li>
           <li class="search-btn"><a href="javascript:void();"><i class="fa fa-search" aria-hidden="true"></i></a></li>
         </ul>
       </div>
     </div>
   </nav>
+  <div class="search-bar">
+    <%= form_with url: search_path, local: true, method: :get, html: {class: "form-inline"} do |f| %>
+    <div class="form-group">
+    <%= f.text_field :q, placeholder: "Search dishes...", data: {behavior: "autocomplete"}, class: "form-control" %>
+    <%= f.button "Search", class: "btn btn-success" %>
+    </div>
+    <% end %>
+  </div>
 </header>
 
 <section class="banner_area">

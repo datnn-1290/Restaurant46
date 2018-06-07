@@ -12,4 +12,6 @@ class DishesController < ApplicationController
   def load_categories
     @categories = Category.ordered_by_name
   end
+
+  def index; end
 end
