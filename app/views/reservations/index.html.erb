@@ -1,0 +1,12 @@
+<div class="form_wrapper">
+  <div class="container">
+    <% if @bookings.present? %>
+      <% @bookings.each do |booking| %>
+        <%= render "reservation_history", order: booking %>
+      <% end %>
+    <% else %>
+      <p><%= t "empty_reservation" %></p>
+    <% end %>
+  </div>
+</div>
+

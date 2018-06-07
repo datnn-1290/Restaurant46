@@ -12,17 +12,14 @@
       </div>
       <div class="right">
         <p class="price"><%= currency_format value["dish_price"] %></p>
-        <p>
-          <%= link_to t("delete"), booking_details_path(id: value["dish_id"]), data: {confirm: t("confirm_delete") + "'#{value["dish_name"]}'"}, method: :delete, remote: true %>
-        </p>
       </div>
     </div>
   </li>
   <hr>
   <% end %>
-  <li><span class="total"><%= t "total" %>: <strong><%= total_cart %></strong></span>
-    <button class="checkout btn btn-success"><%= t "check_out" %></button>
+  <li><span class="total"><%= t "total" %>: <strong><%= currency_format total_cart %></strong></span>
   </li>
+  <%= link_to t(".view_order"), carts_path, class: "checkout" %>
 </ul>
 <% else %>
 <ul class="option-cart-item">
