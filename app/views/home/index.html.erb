@@ -1,1 +1,63 @@
+<section class="booking_table_area">
+  <div class="container">
+    <div class="s_white_title">
+      <h3><%= t ".book_table" %></h3>
+      <h2><%= t ".enjoy_meal" %></h2>
+    </div>
+    <div class="row">
+      <%= form_for :table, class: "form-control" do |f| %>
+      <div class="col-sm-3">
 
+        <%= f.number_field :number_people, min: 1, max: 100, value: 1, class: "form-control" %>
+      </div>
+      <div class="col-sm-3">
+        <%= f.date_field :date_book, class: "form-control" %>
+      </div>
+      <div class="col-sm-3">
+        <%= f.time_field :date_book, class: "form-control" %>
+      </div>
+      <div class="col-sm-3">
+        <%= f.submit t("find_table"), class: "btn btn-default submit_btn" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="most_popular_item_area menu_list_page">
+  <div class="container">
+    <div class="s_white_title">
+      <h3 style="color: red;"><%= t ".lastest_dishes" %></h3>
+      <h2 style="color: red;"><%= t ".today_menu" %></h2>
+    </div>
+
+    <div class="p_recype_item_main">
+      <div class="row p_recype_item_active">
+        <% if @lastest_dishes.present? %>
+          <% @lastest_dishes.each do |dish| %>
+            <%= render "dish_lastest", dish: dish %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="most_popular_item_area">
+  <div class="container">
+    <div class="s_white_title">
+      <h3><%= t ".popular_dishes" %></h3>
+      <h2><%= t ".today_menu" %></h2>
+    </div>
+
+    <div class="p_recype_item_main">
+      <div class="row p_recype_item_active">
+        <% if @popular_dishes.present? %>
+          <% @popular_dishes.each do |dish| %>
+            <%= render "dish_popular", dish: dish %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
