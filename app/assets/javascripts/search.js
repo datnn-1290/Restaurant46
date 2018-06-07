@@ -8,7 +8,7 @@ $(document).ready(function(){
     categories: [
     {
       listLocation: 'dishes'
-    } ],
+    }],
     list: {
       onChooseEvent: function() {
         var url = $input.getSelectedItemData().url;

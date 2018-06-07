@@ -7,8 +7,8 @@
 
     <div class="p_recype_item_main">
       <div class="row p_recype_item_active">
-        <% if @dishes.present? %>
-          <% @dishes.each do |dish| %>
+        <% if @dishes_search.present? %>
+          <% @dishes_search.each do |dish| %>
             <%= render "dish_search", dish: dish %>
           <% end %>
         <% end %>

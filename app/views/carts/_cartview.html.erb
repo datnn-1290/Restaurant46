@@ -1,4 +1,4 @@
-<a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+<a href="<%= carts_path %>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 <% if bookingdetails_exist? %>
 <ul class="option-cart-item">
   <% current_cart["detail"].each do |key, value| %>

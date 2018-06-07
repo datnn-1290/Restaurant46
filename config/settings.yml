@@ -18,10 +18,11 @@ dish:
 paginate:
   table_perpage: 9
 limit:
-  autocomplete: 2
+  autocomplete: 4
 admin:
   list:
     per_page: 6
 currency_unit: "Đ"
 dish:
   default_quantity: 1
+  autocomplete: 4
