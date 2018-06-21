@@ -36,6 +36,7 @@ gem "omniauth-twitter"
 gem "puma", "~> 3.0"
 gem "ransack", github: "activerecord-hackery/ransack"
 gem "rails", "~> 5.1.1"
+gem "redis", "~> 4.0"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
 gem "social-share-button"

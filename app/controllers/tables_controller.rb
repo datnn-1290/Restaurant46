@@ -1,4 +1,5 @@
 class TablesController < ApplicationController
+  before_action :broadcast, only: :index
 
   def index
     @q = Table.ransack(params[:q])
@@ -11,5 +12,11 @@ class TablesController < ApplicationController
     return if @table
     flash[:danger] = t ".cant_find"
     redirect_to root_url
+  end
+
+  private
+
+  def broadcast
+    ActionCable.server.broadcast "web_notifications", title: 'New things!', body: 'All the news fit to print'
   end
 end

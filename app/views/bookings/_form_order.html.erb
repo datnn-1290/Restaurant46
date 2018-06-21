@@ -1,0 +1,41 @@
+<%= form_for @booking, html: {id: "form-order"} do |f| %>
+<div class="col-md-6" id="checkout">
+  <div class="box">
+    <h1><%= t "table_reserve" %></h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="phone"><%= t "time_start" %></label>
+          <label for="phone"><%= current_cart["table"]["time_start"] %></label>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <p for="address"><%= t "price" %></p>
+          <label for="address"><%= currency_format current_cart["table"]["price"] %></label>
+        </div>
+      </div>
+    </div>
+
+    <%= f.fields_for :booking_details do |booking_detail| %>
+    <%= render "dish_fields", f: booking_detail %>
+    <% end %>
+    <%= f.hidden_field :table_id, value: current_cart["table"]["table_id"] %>
+    <%= f.hidden_field :price_table, value: current_cart["table"]["price"] %>
+    <%= f.hidden_field :time_start, value: current_cart["table"]["time_start"] %>
+  </div>
+</div>
+<%= render "order_review" %>
+<div class="row">
+  <div class="box-footer col-md-12">
+    <div class="pull-left">
+      <a href="<%= carts_path %>" class="btn btn-warning"><i class="fa fa-chevron-left"></i><%= t ".back_to_cart" %></a>
+    </div>
+    <div class="pull-right">
+      <button type="submit" class="btn btn-success"><%= t "booking_table" %><i class="fa fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<% end %>

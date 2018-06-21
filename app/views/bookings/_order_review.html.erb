@@ -1,0 +1,32 @@
+<div class="col-md-6" id="checkout">
+  <h1><%= t "dish_order" %></h1>
+  <div class="content">
+  <div class="">
+      <table class="table" style="text-align: center;">
+        <thead>
+          <tr>
+            <th><%= t ".name" %></th>
+            <th><%= t ".quantity" %></th>
+            <th><%= t ".unit_price" %></th>
+          </tr>
+        </thead>
+        <tbody class="table-cart">
+          <% current_cart["detail"].each do |key, value| %>
+          <tr>
+            <td><%= value["dish_name"] %></td>
+            <td><%= value["quantity"] %></td>
+            <td><%= currency_format(total_price_item value["dish_price"], value["quantity"]) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th><%= t ".total" %></th>
+            <th></th>
+            <th><%= currency_format total_cart %></th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

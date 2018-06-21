@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20180620035929) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
-    t.index ["slug"], name: "slug_UNIQUE", unique: true
+    t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
   create_table "contacts", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20180620035929) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "rate_avg", limit: 24, default: 0.0, null: false
+    t.float "rate_avg", limit: 24
     t.index ["category_id"], name: "index_dishes_on_category_id"
   end
 
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20180620035929) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity"
     t.string "image"
   end
 

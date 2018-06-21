@@ -29,3 +29,6 @@
 //= require i18n.js
 //= require i18n/translations
 //= require social-share-button
+//= require channels/web_notification
+//= require channels/tables
+//= require_tree ./channels

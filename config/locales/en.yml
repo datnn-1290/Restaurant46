@@ -3,13 +3,21 @@ en:
   table: "Table"
   check_out: "Check out"
   delete: "Delete"
+  just_order: "Thank you, you just booked a table from us!"
+  people_table: "Number of peoples"
+  type_table: "Types of table"
+  view_reveration: "Your reservation"
+  require_login: "Please login to our website!"
   confirm_delete: "Are you sure to delete?"
   reserve_table: "Reserve table"
   reserved_table: "You reserved table successful! You can order dish for table now!"
+  awesome: "This is awesome!"
   reserved_table_again: "You already reserved a table, you can order dish now!"
   require_booktable: "Please book a table first!"
   order_dish_success: "Order dish successfull!"
+  order_success: "Booking successfull!"
   detail: "View detail"
+  hr: "________________________________________________________________________"
   find_table: "Find table"
   search_dish: "Search dish..."
   booking_details:
@@ -29,7 +37,7 @@ en:
       today_menu: "Today's menu"
   carts:
     index:
-      title: "Your cart"
+      title: "Your order"
   layouts:
     header:
       total: "Total"
@@ -43,6 +51,7 @@ en:
       menu: "Menu"
       menu_grid: "Menu Grid"
       menu_list: "Menu List"
+      view_order: View order
       gallery: "Gallery"
       table: "Table"
       contact: "Contact US"
