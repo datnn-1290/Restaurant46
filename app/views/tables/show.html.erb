@@ -55,6 +55,7 @@
                       <h3><%= t "choose_your_datetime" %></h3>
                       <%= form_for :reservations, :url => { :controller => "reservations", :action => "create" }, :html => {:method => :post} do |f| %>
                       <%= f.hidden_field :table_id, value: @table.id %>
+                      <%= f.hidden_field :table_price, value: @table.price %>
 
                       <div class="col-sm-3">
                         <%= f.date_field :date_start, class: "form-control" %>

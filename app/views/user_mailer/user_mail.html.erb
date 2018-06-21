@@ -1,0 +1,37 @@
+Dear, <%= @user.email%> <br>
+<%= t "just_order" %> <br>
+<%= t "table_reserved" %> <br>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reserved table</title>
+<style type="text/css">
+  table, tr, td{
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+  <thead>
+    <tr>
+      <th>
+        <%= t "time_start" %>
+      </th>
+      <th>
+        <%= t "time_end" %>
+      </th>
+      <th>
+        <%= t "price" %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @booking.time_start %></td>
+      <td><%= @booking.time_end %></td>
+      <td><%= @booking.price_table %></td>
+    </tr>
+  </tbody>
+</body>
+</html>
+

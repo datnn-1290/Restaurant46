@@ -1,2 +1,2 @@
-$(".total").html('<%= total_cart %>');
-$('.item-<%= params[:id] %>').html("<%= @total_price_item %>");
+$(".total").html('<%= t ".total" %>:<%= currency_format total_cart %>');
+$('.item-<%= params[:id] %>').html("<%= currency_format @total_price_item %>");

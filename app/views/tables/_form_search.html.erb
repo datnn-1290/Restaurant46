@@ -1,12 +1,15 @@
 <%= search_form_for @q, url: tables_path, method: :get do |f| %>
 <div class="col-sm-4">
+  <p class="option-signedin"><%= t "people_table" %></p>
   <%= f.number_field :number_of_peoples_eq, value: 1, min: 1, max: 100, class: "form-control" %>
 </div>
 <%= f.hidden_field :status_eq, value: Table.statuses[:vacant] %>
 <div class="col-sm-4">
+  <p class="option-signedin"><%= t "type_table" %></p>
   <%= f.select :type_table_eq, [[Table.type_tables.keys[0], Table.type_tables["normal"]], [Table.type_tables.keys[1], Table.type_tables["vip"]]], {}, class: "form-control" %>
 </div>
 <div class="col-sm-4">
+  <p>.</p>
   <%= f.submit t("find_table"), class: "btn btn-primary submit_btn" %>
 </div>
 <% end %>

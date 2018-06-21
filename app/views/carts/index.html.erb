@@ -3,8 +3,8 @@
     <div class="col-md-12" id="basket">
       <div class="box">
         <h1 id="cart-title"><%= t ".title" %></h1>
-        <% if current_cart.present? %>
-        <div class="table-responsive">
+        <% if bookingdetails_exist? %>
+        <div class="">
           <table class="table table-warning">
             <thead class = "blue-grey lighten-4">
               <tr>
@@ -29,15 +29,15 @@
         </div>
         <div class="box-footer">
           <div class="pull-left">
-            <a href="<%= root_path %>" class="btn btn-default"><i class="fa fa-chevron-left"></i><%= t ".continue_shopping" %></a>
+            <a href="<%= root_path %>" class="btn btn-default"><i class="fa fa-chevron-left"></i><%= t ".continue_order" %></a>
           </div>
           <div class="pull-right">
-            <%= link_to t(".checkout"), "#", class: "btn btn-primary" %>
+            <%= link_to t(".checkout"), bookings_path, class: "btn btn-primary" %>
           </div>
         </div>
         <% else %>
         <div class="alert alert-warning">
-          <%= t".empty_cart" %>
+          <%= t".empty_order" %>
         </div>
         <% end %>
       </div>
