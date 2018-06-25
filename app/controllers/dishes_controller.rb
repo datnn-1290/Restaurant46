@@ -2,8 +2,12 @@ class DishesController < ApplicationController
   before_action :load_categories, only: %i(index show)
 
   def index
-    @dishes = Dish.search_elastic(params[:q]).results
-    @dishes_search = Dish.search_elastic(params[:q]).results
+    if params[:q]
+      @dishes = Dish.search_elastic(params[:q]).results
+      @dishes_search = Dish.search_elastic(params[:q]).results
+    else
+      @dishes_search = Dish.search_all.results
+    end
   end
 
   def show
