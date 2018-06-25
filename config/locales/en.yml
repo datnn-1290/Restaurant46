@@ -12,6 +12,7 @@ en:
   reserve_table: "Reserve table"
   reserved_table: "You reserved table successful! You can order dish for table now!"
   reserved_table_again: "You already reserved a table, you can order dish now!"
+  awesome: "This is awesome!"
   require_booktable: "Please book a table first!"
   order_dish_success: "Order dish successfull!"
   order_success: "Booking successfull!"

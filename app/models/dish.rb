@@ -7,14 +7,14 @@ class Dish < ApplicationRecord
   belongs_to :category
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true,
-    reject_if: ->(attrs) {attrs["url"].blank?}
+  reject_if: ->(attrs) {attrs["url"].blank?}
   has_many :booking_details
   has_many :ratings
   has_many :reviews
 
   scope :lastest, ->(number){order(created_at: :desc).limit(number).select(:id, :name, :price)}
   scope :most_popular_dishes,
-    ->{where(id: BookingDetail.most_popular_dishes).limit(Settings.home.dish_popular_number)}
+  ->{where(id: BookingDetail.most_popular_dishes).limit(Settings.home.dish_popular_number)}
   scope :with_images, ->{includes :images}
   scope :newest, ->{order created_at: :desc}
   scope :oldest, ->{order created_at: :asc}
@@ -26,7 +26,7 @@ class Dish < ApplicationRecord
   scope :max_price, ->(max){where("price <= ?", max)}
 
   validates :price, presence: true, inclusion: Settings.dish.price_range.range,
-    numericality: {only_integer: true}
+  numericality: {only_integer: true}
 
   settings index: {number_of_shards: 1} do
     mappings dynamic: "false" do
@@ -46,23 +46,31 @@ class Dish < ApplicationRecord
       include: {
         reviews: {
           only: [:content]
-        },
-        category: {
-          only: [:name]
+          },
+          category: {
+            only: [:name]
+          }
         }
-      }
-    )
+        )
   end
 
   def self.search_elastic(query)
     __elasticsearch__.search({
-    query: {
-      multi_match: {
-        query: query,
-        type: "phrase_prefix",
-        fields: ['name^10', 'price', 'description', 'reviews.content', 'category.name']
+      query: {
+        multi_match: {
+          query: query,
+          type: "phrase_prefix",
+          fields: ['name^10', 'price', 'description', 'reviews.content', 'category.name']
+        }
       }
-    }
-  })
+      })
   end
+
+  def self.find_all
+   __elasticsearch__.search({
+    query: {
+      "match_all": {}
+    }
+    })
+ end
 end
